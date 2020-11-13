@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-describe "no-emails plugin" do
+describe "auth-no-email plugin" do
 
   let(:email) { "email@example.com" }
   before do
     SiteSetting.enable_local_logins = false
     SiteSetting.enable_google_oauth2_logins = true
     OmniAuth.config.test_mode = true
-    SiteSetting.no_email_enabled = true
+    SiteSetting.auth_no_email_enabled = true
 
     OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
       provider: 'google_oauth2',
@@ -31,7 +31,7 @@ describe "no-emails plugin" do
   end
 
   it "does nothing when disabled" do
-    SiteSetting.no_email_enabled = false
+    SiteSetting.auth_no_email_enabled = false
     get "/auth/google_oauth2/callback"
     data = JSON.parse(cookies[:authentication_data])
     expect(data["email"]).to eq(email)
@@ -39,7 +39,7 @@ describe "no-emails plugin" do
   end
 
   it "does not prevent matching by email when disabled" do
-    SiteSetting.no_email_enabled = false
+    SiteSetting.auth_no_email_enabled = false
     user = Fabricate(:user, email: email)
     get "/auth/google_oauth2/callback"
     expect(response.status).to eq(302)

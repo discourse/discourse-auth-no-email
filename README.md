@@ -1,4 +1,4 @@
-## discourse-no-email
+## discourse-auth-no-email
 
 This will fake and hide user emails from omniauth login methods. This should be used in conjunction with sso_overrides_email=true, disable_emails=yes and enable_local_logins=false
 

@@ -1,2 +1,2 @@
 plugins:
-  no_email_enabled: false
+  auth_no_email_enabled: false
