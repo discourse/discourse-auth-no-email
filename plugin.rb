@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # name: discourse-auth-no-email
 # about: Remove the need for emails during signup via a managed authenticator
 # version: 1.0
