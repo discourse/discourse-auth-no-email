@@ -2,8 +2,8 @@
 # name: discourse-auth-no-email
 # about: Remove the need for emails during signup via a managed authenticator
 # version: 1.0
-# authors: David Taylor
-# url: https://github.com/discourse-org/discourse-auth-no-email
+# authors: Discourse Team
+# url: https://github.com/discourse/discourse-auth-no-email
 
 enabled_site_setting :auth_no_email_enabled
 
