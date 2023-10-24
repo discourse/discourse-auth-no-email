@@ -6,7 +6,7 @@
 
 enabled_site_setting :auth_no_email_enabled
 
-register_asset 'stylesheets/auth-no-email.scss'
+register_asset "stylesheets/auth-no-email.scss"
 
 on(:before_auth) do |authenticator, auth_token|
   next if !authenticator.is_managed?
