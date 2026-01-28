@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require "rails_helper"
 
 describe "auth-no-email plugin" do
   let(:email) { "email@example.com" }
