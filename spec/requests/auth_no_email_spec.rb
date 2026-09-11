@@ -4,6 +4,8 @@ describe "auth-no-email plugin" do
   let(:email) { "email@example.com" }
   before do
     SiteSetting.enable_local_logins = false
+    SiteSetting.google_oauth2_client_id = "client_id"
+    SiteSetting.google_oauth2_client_secret = "client_secret"
     SiteSetting.enable_google_oauth2_logins = true
     OmniAuth.config.test_mode = true
     SiteSetting.auth_no_email_enabled = true
